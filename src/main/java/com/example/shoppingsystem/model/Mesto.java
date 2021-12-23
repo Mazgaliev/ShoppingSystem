@@ -20,6 +20,8 @@ public class Mesto {
     @ManyToOne
     private User korisnik;
 
+    @OneToMany
+    List<Proizvod> proizvodList;
 //    private List<Naracka> narackaList;
 //
 //    private List<Proizvod> proizvodList;
