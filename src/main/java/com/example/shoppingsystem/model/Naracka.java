@@ -4,6 +4,7 @@ import lombok.Data;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 
 @Data
@@ -20,13 +21,13 @@ public class Naracka {
 
     private LocalDateTime dataVreme;
 
-    @OneToMany
+    @ManyToMany
     private List<Proizvod> prozvodi;
 
     public Naracka(String name) {
-        this.name = name + ' ' + id;
-        this.cena = prozvodi.stream().mapToInt(Proizvod::getCena).sum();
+        this.name = name;
         this.dataVreme = LocalDateTime.now();
+        prozvodi = new ArrayList<>();
     }
 
     public Naracka() {

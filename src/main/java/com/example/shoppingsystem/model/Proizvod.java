@@ -3,6 +3,7 @@ package com.example.shoppingsystem.model;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
 @Data
@@ -21,7 +22,8 @@ public class Proizvod {
 
     public Proizvod(String name, Integer cena) {
         this.name = name;
-        this.cena = cena + dodatoci.stream().mapToInt(Dodatok::getCena).sum();
+        dodatoci = new ArrayList<>();
+        this.cena = cena;
     }
 
     public Proizvod() {

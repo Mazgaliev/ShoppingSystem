@@ -1,10 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <title>$Title$</title>
 </head>
 <body>
-$END$
+<form th:method="POST" th:action="@{/create}">
+    <label for="ime">Име на производ</label><input type="text" id="ime" name="ime">
+    <label for="cena">Цена на производ</label><input type="text" id="cena" name="cena">
+    <button type="submit">Креирај</button>
+</form>
 </body>
 </html>

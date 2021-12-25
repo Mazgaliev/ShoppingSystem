@@ -8,5 +8,8 @@ public interface ProizvodService {
 
     List<Proizvod> getAllItems();
 
+    Proizvod getProizvById(Long id);
+
+    Proizvod createProizvod(String name, Integer cena);
 
 }

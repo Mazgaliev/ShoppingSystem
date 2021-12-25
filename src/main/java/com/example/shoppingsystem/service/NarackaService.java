@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface NarackaService {
 
-    Naracka createNaracka(String name);
+    Naracka createNaracka(Naracka naracka);
 
     List<Naracka> getAllOrders();
 

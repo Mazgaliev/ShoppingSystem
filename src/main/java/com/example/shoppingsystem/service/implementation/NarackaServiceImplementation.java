@@ -16,8 +16,8 @@ public class NarackaServiceImplementation implements NarackaService {
     }
 
     @Override
-    public Naracka createNaracka(String name) {
-        return narackaRepository.save(new Naracka(name));
+    public Naracka createNaracka(Naracka naracka) {
+        return narackaRepository.save(naracka);
     }
 
     @Override

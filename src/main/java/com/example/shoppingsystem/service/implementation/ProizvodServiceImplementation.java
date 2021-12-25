@@ -19,4 +19,14 @@ public class ProizvodServiceImplementation implements ProizvodService {
     public List<Proizvod> getAllItems() {
         return proizvodRepository.findAll();
     }
+
+    @Override
+    public Proizvod getProizvById(Long id) {
+        return proizvodRepository.findById(id).get();
+    }
+
+    @Override
+    public Proizvod createProizvod(String name, Integer cena) {
+        return proizvodRepository.save(new Proizvod(name, cena));
+    }
 }

@@ -7,25 +7,33 @@
 <body>
 <h1>BurgerToGo</h1>
 
-<form>
+<form th:method="POST" th:action="@{/order}">
+    <h1> Производи </h1>
     <table>
         <th:block th:each="proizvod:${proizvodi}">
             <tr>
-                <td th:text="${proizvod.getName()}"></td>
+                <td><label for="prozivodId"></label><input type="checkbox" th:text="${proizvod.getName()}"
+                                                           th:value="${proizvod.getId()}" id="prozivodId"
+                                                           name="proizvodId"></td>
                 <td th:text="${proizvod.getCena()}"></td>
-                <a th:action="@{'/home/edit'}"><td>Edit</td></a>
             </tr>
         </th:block>
     </table>
+    <h1>Додатоци</h1>
     <table>
         <th:block th:each="dodatok:${dodatoci}">
             <tr>
-                <td th:text="${dodatok.getName()}"></td>
+                <td><label for="dodatokId"></label><input th:text="${dodatok.getName()}" th:value="${dodatok.getId()}"
+                                                          id="dodatokId" name="dodatokId" type="checkbox"></td>
                 <td th:text="${dodatok.getCena()}"></td>
             </tr>
         </th:block>
     </table>
-</form>
 
+    <button type="submit"> Нарачај</button>
+
+</form>
+<a th:href="@{'/create'}"> Креирај производ </a></br>
+<a th:href="@{'/home/edit'}"> Едитирај производ </a>
 </body>
 </html>
