@@ -21,7 +21,7 @@ public class Proizvod {
 
     public Proizvod(String name, Integer cena) {
         this.name = name;
-        this.cena = cena + dodatoci.stream().mapToInt(i -> Integer.parseInt(i.getCena())).sum();
+        this.cena = cena + dodatoci.stream().mapToInt(Dodatok::getCena).sum();
     }
 
     public Proizvod() {

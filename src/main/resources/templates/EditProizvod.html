@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1> Промени производ </h1>
+<form th:method="POST" th:action="@{/home/edit}">
+    <label for="proizvod">Производ:</label> <select id="proizvod" name="proizvod">
+    <th:block th:each="proizvod:${proizvodi}">
+        <option th:text="${proizvod.getName()}" th:value="${proizvod.getId}"></option>
+    </th:block>
+</select></br>
+    <label for="cena">Цена на производ:</label><input type="text" id="cena" name="cena"></br>
+
+    <button type="submit"> Едитирај</button>
+</form>
+</body>
+</html>

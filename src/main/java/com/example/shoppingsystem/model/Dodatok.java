@@ -16,9 +16,9 @@ public class Dodatok {
 
     private String name;
 
-    private String cena;
+    private Integer cena;
 
-    public Dodatok(String name, String cena) {
+    public Dodatok(String name, Integer cena) {
         this.name = name;
         this.cena = cena;
     }

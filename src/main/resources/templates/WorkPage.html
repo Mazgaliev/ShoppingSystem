@@ -6,5 +6,26 @@
 </head>
 <body>
 <h1>BurgerToGo</h1>
+
+<form>
+    <table>
+        <th:block th:each="proizvod:${proizvodi}">
+            <tr>
+                <td th:text="${proizvod.getName()}"></td>
+                <td th:text="${proizvod.getCena()}"></td>
+                <a th:action="@{'/home/edit'}"><td>Edit</td></a>
+            </tr>
+        </th:block>
+    </table>
+    <table>
+        <th:block th:each="dodatok:${dodatoci}">
+            <tr>
+                <td th:text="${dodatok.getName()}"></td>
+                <td th:text="${dodatok.getCena()}"></td>
+            </tr>
+        </th:block>
+    </table>
+</form>
+
 </body>
 </html>
