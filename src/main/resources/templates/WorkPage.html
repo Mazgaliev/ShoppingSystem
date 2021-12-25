@@ -48,5 +48,22 @@
 <th:block th:if="${#request.getRemoteUser()!=null}">
     <a th:href="@{'/logout'}">Logout</a>
 </th:block>
+<th:block th:if="${#request.getRemoteUser()!=null}">
+    <h1>Денешни нарачки</h1>
+    <table>
+        <tr>
+            <td>Id</td>
+            <td>Цена</td>
+            <td>Производи</td>
+        </tr>
+        <th:block th:each="naracka:${naracki}">
+            <tr>
+                <td th:text="${naracka.getId()}"></td>
+                <td th:text="${naracka.getCena()}"></td>
+                <td th:each="proizv:${naracka.getProzvodi()}" th:text="${proizv.getName()}"></td>
+            </tr>
+        </th:block>
+    </table>
+</th:block>
 </body>
 </html>
