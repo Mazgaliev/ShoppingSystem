@@ -26,7 +26,7 @@ public class Naracka {
 
     public Naracka(String name) {
         this.name = name;
-        this.dataVreme = LocalDateTime.now().plusHours(1);
+        this.dataVreme = LocalDateTime.now();
         prozvodi = new ArrayList<>();
     }
 

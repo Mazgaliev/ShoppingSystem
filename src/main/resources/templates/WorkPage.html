@@ -14,10 +14,13 @@
     <table>
         <th:block th:each="proizvod:${proizvodi}">
             <tr>
-                <td><label for="prozivodId"></label><input type="checkbox" th:text="${proizvod.getName()}"
-                                                           th:value="${proizvod.getId()}" id="prozivodId"
-                                                           name="proizvodId"></td>
-                <td th:text="${proizvod.getCena()}"></td>
+                <!--                <td><label for="prozivodId"></label><input type="checkbox" th:text="${proizvod.getName()}"-->
+                <!--                                                           th:value="${proizvod.getId()}" id="prozivodId"-->
+                <!--                                                           name="proizvodId"></td>-->
+
+                <td><a th:href="@{'/work/add{id}'(id=${proizvod.getId()})}" th:text="${proizvod.getName()}"></a></td>
+
+                <td th:text="${proizvod.getCena() + ' ' + 'Денари'}"></td>
             </tr>
         </th:block>
     </table>
@@ -30,6 +33,7 @@
                     <td><label for="dodatokId"></label><input th:text="${dodatok.getName()}"
                                                               th:value="${dodatok.getId()}"
                                                               id="dodatokId" name="dodatokId" type="checkbox"></td>
+
                     <td th:text="${dodatok.getCena()}"></td>
                 </tr>
             </th:block>
@@ -38,7 +42,15 @@
         <button type="submit"> Нарачај</button>
     </th:block>
 </form>
-
+<h2>Моментална нарачка</h2>
+<form th:method="POST" th:action="@{/order}">
+    <ul>
+        <th:block th:each="proizvod:${momentalnaNaracka}">
+            <li th:text="${proizvod.getName() + ' ' +proizvod.getCena()+ 'Денари'}"></li>
+        </th:block>
+    </ul>
+    <button type="submit">Нарачи</button>
+</form>
 <th:block sec:authorize="hasRole('ROLE_ADMIN')">
     <a th:href="@{'/create'}"> Креирај производ </a></br>
 </th:block>

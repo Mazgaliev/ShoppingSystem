@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Controller
@@ -26,21 +27,9 @@ public class OrderController {
     }
 
     @PostMapping
-    public String makeOrder(@RequestParam String proizvodId) {
-        String name = "naracka";
-        String[] proizvodi = proizvodId.split(",");
-        Naracka naracka = new Naracka(name);
-        List<Proizvod> proizvodList = naracka.getProzvodi();
-        for (String proizvod : proizvodi) {
-            Long id = Long.parseLong(proizvod);
-            Proizvod p = proizvodService.getProizvById(id);
-            proizvodList.add(p);
-        }
+    public String makeOrder() {
 
-        naracka.setProzvodi(proizvodList);
-        naracka.setCena(proizvodList.stream().mapToInt(Proizvod::getCena).sum());
-        narackaService.createNaracka(naracka);
-        return "redirect:/work";
+        return "redirect:/work/order";
     }
 
 }
