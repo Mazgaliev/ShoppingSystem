@@ -12,4 +12,6 @@ public interface DodatokRepository extends JpaRepository<Dodatok, Long> {
 
     List<Dodatok> findAll();
 
+    Dodatok getById(Long id);
+
 }

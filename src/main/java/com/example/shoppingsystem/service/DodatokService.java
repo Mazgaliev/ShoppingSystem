@@ -10,4 +10,6 @@ public interface DodatokService {
 
     List<Dodatok> getAllDodatoci();
 
+    Dodatok getDodatokById(Long id);
+
 }

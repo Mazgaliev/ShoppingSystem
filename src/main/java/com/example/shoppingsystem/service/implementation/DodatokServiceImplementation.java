@@ -24,4 +24,9 @@ public class DodatokServiceImplementation implements DodatokService {
     public List<Dodatok> getAllDodatoci() {
         return dodatokRepository.findAll();
     }
+
+    @Override
+    public Dodatok getDodatokById(Long id) {
+        return dodatokRepository.getById(id);
+    }
 }

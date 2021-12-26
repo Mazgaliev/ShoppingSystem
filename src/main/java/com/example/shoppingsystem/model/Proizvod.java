@@ -17,7 +17,7 @@ public class Proizvod {
 
     Integer cena;
 
-    @OneToMany
+    @ManyToMany
     List<Dodatok> dodatoci;
 
     public Proizvod(String name, Integer cena) {

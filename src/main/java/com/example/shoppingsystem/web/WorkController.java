@@ -1,5 +1,6 @@
 package com.example.shoppingsystem.web;
 
+import com.example.shoppingsystem.model.Dodatok;
 import com.example.shoppingsystem.model.Naracka;
 import com.example.shoppingsystem.model.Proizvod;
 import com.example.shoppingsystem.service.DodatokService;
@@ -12,8 +13,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 @Controller
 @RequestMapping("/work")
@@ -36,6 +36,8 @@ public class WorkController {
         proizvodi.add(proizvodService.getProizvById(foodId));
         return "redirect:/work";
     }
+
+
 
     @GetMapping("/order")
     public String makeOrder() {
