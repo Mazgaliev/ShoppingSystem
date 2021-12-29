@@ -1,15 +1,79 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+<meta charset="utf-8">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<link rel="stylesheet" href="https://mdbootstrap.com/api/snippets/static/download/MDB-Pro_4.19.2/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://mdbootstrap.com/api/snippets/static/download/MDB-Pro_4.19.2/css/mdb.min.css">
+<link rel="stlesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&amp;display=swap">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.0/css/all.css">
+<meta name="viewport" content="widh=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+      integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+      integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="stylesheet" type="text/css" th:href=" @{/style.css}">
 </head>
+<!--<style type="text/css" media="screen">-->
+
+<!--    button {-->
+<!--        background-color: #04AA6D;-->
+<!--        color: white;-->
+<!--        padding: 14px 20px;-->
+<!--        margin: 8px 0;-->
+<!--        border: none;-->
+<!--        cursor: pointer;-->
+<!--        width: 20%;-->
+<!--        box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);-->
+<!--    }-->
+
+<!--    .no1 {-->
+
+<!--        color: #FFF;-->
+<!--        background: linear-gradient(-45deg, #934A5F, #57648C, #C2B4D6, #E5E5E5);-->
+<!--        background-size: 400% 400%;-->
+<!--        position: relative;-->
+
+<!--    }-->
+
+<!--    label {-->
+<!--        color: #000000FF;-->
+<!--    }-->
+</style>
 <body>
-<h1>Login Page</h1>
-<form th:method="POST" th:action="@{/login}">
-    <label for="username">Username:</label><input type="text" id="username" name="username">
-    <label for="password">Password:</label><input type="password" id="password" name="password">
-    <button type="submit">Login</button>
-</form>
+<div class="no1">
+    <p>.</p>
+    <h1 style="text-align: center; margin-top: 150px; color:#000000FF ;">Login Page</h1>
+    <form style="text-align: center; margin-top: 50px;" th:method="POST" th:action="@{/login}">
+        <label for="username">Username:</label><input style="border-radius: 20px;" type="text" id="username"
+                                                      name="username">
+        <label style="margin-left: 30px;" for="password">Password:</label><input style="border-radius: 20px;"
+                                                                                 type="password" id="password"
+                                                                                 name="password"><br>
+        <button style="margin-top: 5px; border-radius: 30px;" class="button" type="submit">Login</button>
+    </form>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+</div>
+<style>
+
+    .button:hover {
+        background-color: #000000FF
+    }
+
+    .button:active {
+        background-color: #000000FF;
+        box-shadow: 0 5px #666;
+        transform: translateY(4px);
+    }
+</style>
+
+
 </body>
 </html>

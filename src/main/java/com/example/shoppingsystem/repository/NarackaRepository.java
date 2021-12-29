@@ -13,4 +13,6 @@ public interface NarackaRepository extends JpaRepository<Naracka, Long> {
     Naracka save(Naracka naracka);
 
     List<Naracka> getByDataVremeAfter(LocalDateTime dateTime);
+
+    List<Naracka> getByDataVremeIsBetween(LocalDateTime data1, LocalDateTime data2);
 }

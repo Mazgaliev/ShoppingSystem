@@ -37,7 +37,13 @@ public class WorkController {
         return "redirect:/work";
     }
 
+    @GetMapping("/dodatok{dodatokId}")
+    public String addDodatok(@PathVariable Long dodatokId) {
 
+//        dodatokList.add(dodatokService.getDodatokById(dodatokId));
+
+        return "redirect:/work";
+    }
 
     @GetMapping("/order")
     public String makeOrder() {
@@ -62,9 +68,19 @@ public class WorkController {
 
         model.addAttribute("proizvodi", proizvodService.getAllItems());
         model.addAttribute("dodatoci", dodatokService.getAllDodatoci());
-        model.addAttribute("naracki", narackaService.getAllOrders());
+        model.addAttribute("naracki", narackaService.getTodaysOrders());
         model.addAttribute("momentalnaNaracka", proizvodi);
-        return "WorkPage";
+
+        return "WorkPageBs";
     }
+
+//    @GetMapping("/abc")
+//    public String workPage2(Model model) {
+//        model.addAttribute("proizvodi", proizvodService.getAllItems());
+//        model.addAttribute("dodatoci", dodatokService.getAllDodatoci());
+//        model.addAttribute("naracki", narackaService.getTodaysOrders());
+//        model.addAttribute("momentalnaNaracka", proizvodi);
+//        return "WorkPageBs";
+//    }
 
 }

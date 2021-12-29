@@ -1,6 +1,7 @@
 package com.example.shoppingsystem.model;
 
 import lombok.Data;
+import org.springframework.data.repository.cdi.Eager;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;

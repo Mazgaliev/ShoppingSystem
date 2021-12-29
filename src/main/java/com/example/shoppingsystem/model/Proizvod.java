@@ -17,7 +17,7 @@ public class Proizvod {
 
     Integer cena;
 
-    @ManyToMany
+    @ManyToMany(fetch = FetchType.EAGER)
     List<Dodatok> dodatoci;
 
     public Proizvod(String name, Integer cena) {

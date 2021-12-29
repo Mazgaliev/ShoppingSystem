@@ -1,0 +1,40 @@
+*{
+    padding-top: 5px;
+}
+button {
+    background-color: #000000FF;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none ;
+    cursor: pointer;
+    width: 40%;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+.no1{
+
+    color:#FFF;
+    background: linear-gradient(-45deg, #934A5F, #57648C, #C2B4D6, #E5E5E5);
+    background-size: 400% 400%;
+    position: relative;
+
+}
+label{
+    color: #000000FF;
+}
+h1{
+    color: #000000FF;
+}
+h2{
+    color: #000000FF;
+}
+.a1{
+    background-color: #000000FF;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none ;
+    cursor: pointer;
+    width: 40%;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
