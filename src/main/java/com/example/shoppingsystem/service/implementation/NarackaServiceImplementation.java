@@ -36,4 +36,9 @@ public class NarackaServiceImplementation implements NarackaService {
 
         return narackaRepository.getByDataVremeIsBetween(startDay, endDay);
     }
+
+    @Override
+    public Naracka getNarackaById(Long id) {
+        return narackaRepository.getById(id);
+    }
 }

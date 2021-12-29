@@ -70,10 +70,20 @@ public class WorkController {
         model.addAttribute("dodatoci", dodatokService.getAllDodatoci());
         model.addAttribute("naracki", narackaService.getTodaysOrders());
         model.addAttribute("momentalnaNaracka", proizvodi);
-
+        model.addAttribute("cena", proizvodi.stream().mapToInt(Proizvod::getCena).sum());
         return "WorkPageBs";
     }
 
+    @GetMapping("/delete/{fId}")
+    public String delProductFromNaracka(@PathVariable Long fId) {
+        for (Proizvod proizvod : proizvodi) {
+            if (proizvod.getId().equals(fId)) {
+                proizvodi.remove(proizvod);
+                break;
+            }
+        }
+        return "redirect:/work";
+    }
 //    @GetMapping("/abc")
 //    public String workPage2(Model model) {
 //        model.addAttribute("proizvodi", proizvodService.getAllItems());

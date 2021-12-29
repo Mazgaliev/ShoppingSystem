@@ -12,4 +12,6 @@ public interface NarackaService {
     List<Naracka> getAllOrders();
 
     List<Naracka> getTodaysOrders();
+
+    Naracka getNarackaById(Long id);
 }

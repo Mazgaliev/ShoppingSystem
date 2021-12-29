@@ -45,8 +45,16 @@
                 <div class="col-md-6">
                     <h2 style="text-align: center;">Моментална нарачка</h2>
                     <div style="font-size: 15px; text-align: center; border: 5px solid #000; border-radius: 10px; padding: 30px">
+
+
                         <th:block th:each="proizvod:${momentalnaNaracka}">
-                            <b th:text="${proizvod.getName()}"></b></br>
+                            <div>
+                                <b th:text="${proizvod.getName() + ' ' + proizvod.getCena()+' Денари'}"></b>
+                                <b><a th:href="@{'/work/delete/{fId}'(fId=${proizvod.getId()})}">Избрши</a></b>
+                            </div>
+                        </th:block>
+                        <th:block th:if="${cena>0}">
+                            <b th:text="${'Целосен износ: '+ cena + ' Денари'}"></b>
                         </th:block>
                     </div>
                     <form th:method="POST" th:action="@{/order}">
@@ -119,6 +127,8 @@
                                     <td th:text="${naracka.getId()}"></td>
                                     <td th:text="${naracka.getCena() + ' Денари'}"></td>
                                     <td th:each="proizv:${naracka.getProzvodi()}" th:text="${proizv.getName()}"></td>
+
+                                    </td>
                                 </tr>
                             </th:block>
                         </table>
