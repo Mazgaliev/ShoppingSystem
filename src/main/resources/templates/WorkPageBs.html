@@ -28,11 +28,13 @@
                     <h1>BurgerToGo</h1>
                 </div>
                 <div class="col-md-6">
+                    -->
                     <th:block th:if="${#request.getRemoteUser()!=null}">
                         <a class="a1" style="color: #FFF; margin-left: 500px;  border-radius: 30px;"
                            th:href="@{'/logout'}">Одјави</a>
                     </th:block>
                 </div>
+                <!--                    Tuka izleva username  vo  vo th:blockot  -->
                 <th:block th:if="${#request.getRemoteUser()!=null}" th:text="${#request.getRemoteUser()}">
 
                 </th:block>
@@ -68,10 +70,7 @@
                     <table>
                         <th:block th:each="proizvod:${proizvodi}">
                             <tr>
-                                <!--                <td><label for="prozivodId"></label><input type="checkbox" th:text="${proizvod.getName()}"-->
-                                <!--                                                           th:value="${proizvod.getId()}" id="prozivodId"-->
-                                <!--                                                           name="proizvodId"></td>-->
-
+                                <!--                                tuka u <a> tago se proizvode-->
                                 <td><a th:href="@{'/work/add{id}'(id=${proizvod.getId()})}"
                                        th:text="${proizvod.getName()}"></a></td>
 
@@ -87,19 +86,17 @@
             <div class="row">
                 <div class="col-md-4">
                     <th:block th:if="${#request.getRemoteUser()!=null}">
-                        <h1>Додатоци</h1>
-                        <table>
-                            <th:block th:each="dodatok:${dodatoci}">
-                                <tr>
-                                    <!--                <td><label for="dodatokId"></label><input th:text="${dodatok.getName()}"-->
-                                    <!--                                                          th:value="${dodatok.getId()}"-->
-                                    <!--                                                          id="dodatokId" name="dodatokId" type="checkbox"></td>-->
-                                    <td><a th:text="${dodatok.getName()}"
-                                           th:href="@{'/work/ad{dodatokId}'(dodatokId=${dodatok.getId()})}"></a></td>
-                                    <td th:text="${dodatok.getCena()}"></td>
-                                </tr>
-                            </th:block>
-                        </table>
+<!--                        <h1>Додатоци</h1>-->
+<!--                        <table>-->
+<!--                            <th:block th:each="dodatok:${dodatoci}">-->
+<!--                                <tr>-->
+<!--&lt;!&ndash;                                    tuka se dodatocite&ndash;&gt;-->
+<!--                                    <td><a th:text="${dodatok.getName()}"-->
+<!--                                           th:href="@{'/work/ad{dodatokId}'(dodatokId=${dodatok.getId()})}"></a></td>-->
+<!--                                    <td th:text="${dodatok.getCena()}"></td>-->
+<!--                                </tr>-->
+<!--                            </th:block>-->
+<!--                        </table>-->
 
                     </th:block>
                 </div>
