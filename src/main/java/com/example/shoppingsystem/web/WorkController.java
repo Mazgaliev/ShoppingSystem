@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import java.util.*;
 
 @Controller
-@RequestMapping("/work")
+@RequestMapping(value = {"/work", "/"})
 public class WorkController {
     private final ProizvodService proizvodService;
     private final DodatokService dodatokService;
